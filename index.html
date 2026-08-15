@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abigail Ogunmiloro — Chief of Staff</title>
+<meta name="description" content="Abigail Adenike Ogunmiloro — Chief of Staff. Finance, Operations & People leadership.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0d0f10;
+    --ink-2:#141715;
+    --paper:#f2eee4;
+    --paper-dim:#c9c4b6;
+    --gold:#c6a15b;
+    --gold-dim:#8f7645;
+    --teal:#16302b;
+    --teal-2:#1e3d36;
+    --line:rgba(242,238,228,0.12);
+    --line-strong:rgba(242,238,228,0.22);
+    --max:1080px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit; text-decoration:none;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  .mono{font-family:'IBM Plex Mono', monospace; letter-spacing:0.06em;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+
+  /* ---- Nav ---- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(13,15,16,0.86);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 28px;
+    max-width:var(--max); margin:0 auto;
+  }
+  nav .mark{font-family:'Fraunces', serif; font-size:19px; font-weight:500;}
+  nav .cta-link{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; letter-spacing:0.1em; text-transform:uppercase;
+    border:1px solid var(--line-strong);
+    padding:9px 16px; border-radius:2px;
+    transition:border-color .25s ease, background .25s ease;
+  }
+  nav .cta-link:hover{border-color:var(--gold); background:rgba(198,161,91,0.08);}
+
+  /* ---- Hero ---- */
+  .hero{
+    padding:96px 0 72px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero h1{
+    font-family:'Fraunces', serif;
+    font-weight:400;
+    font-size:clamp(42px, 7vw, 76px);
+    line-height:1.02;
+    letter-spacing:-0.01em;
+    max-width:14ch;
+  }
+  .hero .name-underline{
+    display:block;
+    width:120px; height:2px;
+    background:var(--gold);
+    margin:26px 0 26px;
+    transform-origin:left;
+    animation:draw 1s cubic-bezier(.6,0,.2,1) 0.2s both;
+  }
+  @keyframes draw{from{transform:scaleX(0);} to{transform:scaleX(1);}}
+
+  .hero .role{
+    font-size:19px;
+    color:var(--paper-dim);
+    max-width:38ch;
+    margin-bottom:48px;
+  }
+  .hero .role strong{color:var(--paper); font-weight:500;}
+
+  .hero-photo{
+    width:132px; height:132px;
+    border-radius:50%;
+    overflow:hidden;
+    border:1px solid var(--line-strong);
+    margin-bottom:32px;
+  }
+  .hero-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+
+  .ledger{
+    border-top:1px solid var(--line);
+  }
+  .ledger-row{
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:24px;
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+    align-items:baseline;
+  }
+  .ledger-row .k{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--gold-dim);
+  }
+  .ledger-row .v{font-size:16px; color:var(--paper);}
+
+  /* ---- Sections generic ---- */
+  section{padding:88px 0; border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .section-head{
+    display:flex; align-items:baseline; gap:18px;
+    margin-bottom:44px;
+  }
+  .section-head h2{
+    font-family:'Fraunces', serif;
+    font-weight:400;
+    font-size:clamp(28px, 4vw, 38px);
+  }
+  .section-head .eyebrow{white-space:nowrap;}
+  .section-head::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--line-strong);
+  }
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---- About ---- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:200px 1fr;
+    gap:56px;
+    align-items:start;
+  }
+  .monogram{
+    width:180px; height:180px;
+    border-radius:50%;
+    background:linear-gradient(160deg, var(--teal-2), var(--teal));
+    border:1px solid var(--line-strong);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces', serif;
+    font-size:56px;
+    color:var(--gold);
+  }
+  .about p{color:var(--paper-dim); font-size:17px; max-width:64ch;}
+  .about p + p{margin-top:16px;}
+
+  /* ---- Experience (ledger rows) ---- */
+  .exp-row{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:16px;
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .exp-row:first-child{border-top:1px solid var(--line);}
+  .exp-org{font-family:'Fraunces', serif; font-size:21px;}
+  .exp-desc{color:var(--paper-dim); font-size:15px; margin-top:4px; max-width:56ch;}
+  .exp-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--gold);
+    white-space:nowrap;
+    align-self:start;
+    padding-top:4px;
+  }
+
+  /* ---- Ventures ---- */
+  .venture-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+  }
+  .venture-card{
+    background:var(--ink-2);
+    border:1px solid var(--line);
+    border-radius:3px;
+    padding:28px 24px;
+    transition:border-color .25s ease, transform .25s ease;
+  }
+  .venture-card:hover{border-color:var(--gold-dim); transform:translateY(-3px);}
+  .venture-card h3{
+    font-family:'Fraunces', serif; font-weight:500;
+    font-size:21px; margin-bottom:10px;
+  }
+  .venture-card p{color:var(--paper-dim); font-size:14.5px;}
+
+  /* ---- Skills ---- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:48px;
+  }
+  .skill-list{list-style:none;}
+  .skill-list li{
+    padding:13px 0;
+    border-bottom:1px solid var(--line);
+    display:flex; justify-content:space-between;
+    font-size:15.5px;
+  }
+  .skill-list li:first-child{border-top:1px solid var(--line);}
+  .skill-list .idx{font-family:'IBM Plex Mono', monospace; color:var(--gold-dim); font-size:13px;}
+
+  /* ---- Education ---- */
+  .edu-row{display:flex; justify-content:space-between; align-items:baseline; padding:18px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .edu-row .deg{font-family:'Fraunces', serif; font-size:19px;}
+  .edu-row .field{color:var(--paper-dim); font-size:14.5px;}
+
+  /* ---- Contact ---- */
+  .contact{
+    text-align:left;
+  }
+  .contact h2{
+    font-family:'Fraunces', serif; font-weight:400;
+    font-size:clamp(32px, 5vw, 48px);
+    max-width:18ch;
+    margin-bottom:28px;
+  }
+  .contact-actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:8px;}
+  .btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px; letter-spacing:0.08em; text-transform:uppercase;
+    padding:15px 26px;
+    border-radius:2px;
+    border:1px solid var(--line-strong);
+    transition:all .25s ease;
+    display:inline-block;
+  }
+  .btn-gold{background:var(--gold); color:var(--ink); border-color:var(--gold);}
+  .btn-gold:hover{background:transparent; color:var(--gold);}
+  .btn-outline:hover{border-color:var(--gold); color:var(--gold);}
+
+  footer{
+    padding:36px 0 48px;
+    color:var(--paper-dim);
+    font-size:13px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+  }
+
+  @media (max-width:760px){
+    .about-grid{grid-template-columns:1fr;}
+    .monogram{width:120px; height:120px; font-size:38px;}
+    .venture-grid{grid-template-columns:1fr;}
+    .skills-grid{grid-template-columns:1fr;}
+    .ledger-row{grid-template-columns:110px 1fr;}
+    .exp-row{grid-template-columns:1fr;}
+    .exp-tag{padding-top:0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <span class="mark">Bibi Maxwell</span>
+    <a class="cta-link" href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero wrap" style="border-bottom:none; padding-bottom:0;">
+    <div class="hero-photo"><img src="photo.jpg" alt="Portrait of Abigail Ogunmiloro"></div>
+    <span class="eyebrow">Portfolio</span>
+    <h1>Abigail Adenike Ogunmiloro</h1>
+    <span class="name-underline"></span>
+    <p class="role">I'm a <strong>Chief of Staff</strong> — I lead across finance, operations, and people.</p>
+
+    <div class="ledger">
+      <div class="ledger-row">
+        <span class="k">Role</span>
+        <span class="v">Chief of Staff, CIIFA — Creative Industries Initiative for Africa</span>
+      </div>
+      <div class="ledger-row">
+        <span class="k">Focus</span>
+        <span class="v">Financial Management · Operations · People</span>
+      </div>
+      <div class="ledger-row">
+        <span class="k">Based in</span>
+        <span class="v">Lagos, Nigeria</span>
+      </div>
+      <div class="ledger-row">
+        <span class="k">Founder of</span>
+        <span class="v">Abby's Cakery · Waffle Wednesday · Budget Baddie</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap about reveal">
+    <div class="section-head">
+      <span class="eyebrow">About</span>
+      <h2>The short version</h2>
+    </div>
+    <div class="about-grid">
+      <div class="monogram"><img src="photo.jpg" alt="" style="width:100%; height:100%; object-fit:cover; border-radius:50%;"></div>
+      <div class="about">
+        <p>I'm a Chief of Staff and finance/operations executive with over six years of experience in strategic planning, financial management, and administrative leadership. I've built a track record of streamlining operations, leading cross-functional teams, and aligning internal communications.</p>
+        <p>My work spans stakeholder management, budget oversight, contract administration, and organisational growth — mostly within fast-paced creative and commercial environments. Beyond the boardroom, I'm the founder of Abby's Cakery, Waffle Wednesday, and Budget Baddie — a financial literacy brand helping women build better money habits — and I bring the same precision and care to each of my ventures as I do to my day job.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap reveal">
+    <div class="section-head">
+      <span class="eyebrow">Experience</span>
+      <h2>Where she's worked</h2>
+    </div>
+    <div class="exp-row">
+      <div>
+        <div class="exp-org">Chief of Staff — CIIFA</div>
+        <div class="exp-desc">Leading cross-functional initiatives, coordinating teams as key liaison for internal and external stakeholders, managing internal communications, and overseeing departmental budgets and project execution.</div>
+      </div>
+      <span class="exp-tag">Sep 2024 – Present</span>
+    </div>
+    <div class="exp-row">
+      <div>
+        <div class="exp-org">Head of Finance and Administration — CIIFA</div>
+        <div class="exp-desc">Developed administrative policy, ran financial planning and reporting across active projects, and built a suite of Excel-based tools for fund tracking and budget execution.</div>
+      </div>
+      <span class="exp-tag">Sep 2023 – Present</span>
+    </div>
+    <div class="exp-row">
+      <div>
+        <div class="exp-org">External Business Partner / Administrative Manager — Johnson &amp; Johnson</div>
+        <div class="exp-desc">Supported the Country Manager across Nigerian operations, managed compliance documentation, and tracked vendor and partner contracts against J&amp;J and regulatory standards.</div>
+      </div>
+      <span class="exp-tag">Feb – Sep 2023</span>
+    </div>
+    <div class="exp-row">
+      <div>
+        <div class="exp-org">Operations Executive — NMR Intercontinental</div>
+        <div class="exp-desc">Streamlined daily operations, managed vendor relationships and contract negotiation, and tracked KPIs to identify areas for improvement.</div>
+      </div>
+      <span class="exp-tag">Nov 2021 – Jan 2023</span>
+    </div>
+    <div class="exp-row">
+      <div>
+        <div class="exp-org">Executive Assistant — NMR Intercontinental</div>
+        <div class="exp-desc">Supported senior executives with business analysis, agenda management, and capital budget oversight across FMCG, Oil &amp; Gas, and Construction.</div>
+      </div>
+      <span class="exp-tag">Jun 2020 – Nov 2021</span>
+    </div>
+    <div class="exp-row">
+      <div>
+        <div class="exp-org">Loan Administrator — Index Managers Inc.</div>
+        <div class="exp-desc">Processed loans, ran KYC audits and compliance checks, and managed a loan portfolio tracker across repayment schedules and collections.</div>
+      </div>
+      <span class="exp-tag">Sep 2019 – Jun 2020</span>
+    </div>
+  </section>
+
+  <section class="wrap reveal">
+    <div class="section-head">
+      <span class="eyebrow">Ventures</span>
+      <h2>Built on the side</h2>
+    </div>
+    <div class="venture-grid">
+      <div class="venture-card">
+        <h3>Abby's Cakery</h3>
+        <p>A cakery built with the same precision and care Abigail brings to financial models — applied to flour and frosting instead of spreadsheets.</p>
+      </div>
+      <div class="venture-card">
+        <h3>Waffle Wednesday</h3>
+        <p>A weekly food venture turning a routine day into something worth looking forward to.</p>
+      </div>
+      <div class="venture-card">
+        <h3>Budget Baddie</h3>
+        <p>A financial literacy brand helping women build better money habits, one practical lesson at a time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap reveal">
+    <div class="section-head">
+      <span class="eyebrow">Skills</span>
+      <h2>What she brings</h2>
+    </div>
+    <div class="skills-grid">
+      <div>
+        <span class="mono" style="font-size:12px; color:var(--paper-dim); letter-spacing:.1em; text-transform:uppercase;">Expertise</span>
+        <ul class="skill-list">
+          <li><span>Strategic Planning &amp; Execution</span> <span class="idx">01</span></li>
+          <li><span>Financial Management &amp; Reconciliation</span> <span class="idx">02</span></li>
+          <li><span>Contract &amp; Administrative Management</span> <span class="idx">03</span></li>
+          <li><span>Administrative Leadership &amp; Exec Support</span> <span class="idx">04</span></li>
+          <li><span>Process Optimisation &amp; Project Mgmt</span> <span class="idx">05</span></li>
+          <li><span>Vendor &amp; Stakeholder Engagement</span> <span class="idx">06</span></li>
+        </ul>
+      </div>
+      <div>
+        <span class="mono" style="font-size:12px; color:var(--paper-dim); letter-spacing:.1em; text-transform:uppercase;">Tools</span>
+        <ul class="skill-list">
+          <li><span>Excel (Advanced)</span> <span class="idx">Modeling &amp; reporting</span></li>
+          <li><span>QuickBooks</span> <span class="idx">Financial software</span></li>
+          <li><span>Zoho</span> <span class="idx">Operational software</span></li>
+          <li><span>Google Workspace</span> <span class="idx">Collaboration</span></li>
+          <li><span>Canva</span> <span class="idx">Brand &amp; content</span></li>
+          <li><span>Notion</span> <span class="idx">Project management</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap reveal">
+    <div class="section-head">
+      <span class="eyebrow">Education</span>
+      <h2>Foundation</h2>
+    </div>
+    <div class="edu-row">
+      <span class="deg">BSc Economics</span>
+      <span class="field">Institut Supérieur de Formation Professionnelle · 2019</span>
+    </div>
+  </section>
+
+  <section class="wrap contact reveal" id="contact">
+    <span class="eyebrow">Contact</span>
+    <h2 style="margin-top:14px;">Let's work together.</h2>
+    <p style="color:var(--paper-dim); max-width:52ch; margin-bottom:8px;">I'm open to conversations around finance, operations, and strategic leadership roles. Based in Lagos, Nigeria — reach out below.</p>
+    <div class="contact-actions">
+      <a class="btn btn-gold" href="mailto:abigailogunmiloro@gmail.com">Email Me</a>
+      <a class="btn btn-outline" href="https://www.linkedin.com/in/abigailogunmiloro" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-outline" href="Abigail_Ogunmiloro_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      <a class="btn btn-outline" href="tel:+2349076108268">+234 907 610 8268</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>© 2026 Abigail Adenike Ogunmiloro</span>
+  <span class="mono">bibimaxwell.com</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
